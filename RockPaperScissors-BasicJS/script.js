@@ -1,3 +1,19 @@
+
+// Declare global variables and setup button event listeners
+let playerScore = 0;
+let computerScore = 0;
+let round = 1;
+const pScore = document.getElementById('playerscore');
+const cScore = document.getElementById('computerScore');
+const displayRound = document.getElementById('round');
+const roundActions=document.getElementById('roundactions');
+const compChoice=document.getElementById('computerchoice');
+const endResults=document.getElementById('endresults');
+
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click',game));
+
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -18,36 +34,65 @@ function computerPlay(){
 
 }
 
-
 function playRound(playerSelection, computerSelection){
     if(playerSelection == 'rock'){
-        if(computerSelection == 'paper') return 'Computer wins'; 
-        if(computerSelection == 'scissors') return 'Player wins'
-        if(computerSelection == 'rock') return 'Draw'
+        if(computerSelection == 'paper') return [-1,"Computer Wins"]; 
+        if(computerSelection == 'scissors') return [1,"Player Wins"];
+        if(computerSelection == 'rock') return [0,"Draw"];
     }
 
     if(playerSelection == 'paper'){
-        if(computerSelection == 'paper') return 'Draw'; 
-        if(computerSelection == 'scissors') return 'Computer wins'
-        if(computerSelection == 'rock') return 'Player wins'
+        if(computerSelection == 'paper') return [0,"Draw"]; 
+        if(computerSelection == 'scissors') return [-1,"Computer Wins"];
+        if(computerSelection == 'rock') return [1,"Player Wins"];
     }
 
     if(playerSelection == 'scissors'){
-        if(computerSelection == 'paper') return 'Player wins'; 
-        if(computerSelection == 'scissors') return 'Draw'
-        if(computerSelection == 'rock') return 'Computer wins'
+        if(computerSelection == 'paper') return [1,"Player Wins"]; 
+        if(computerSelection == 'scissors') return [0,"Draw"];
+        if(computerSelection == 'rock') return [-1,"Computer Wins"];
     }
 
 }
-const prompt = require('prompt-sync')({sigint: true});
+function swapButtons() {
+    const buttonDiv = document.getElementById('buttons');
+    buttons.forEach(button => button.remove());
+    buttons = document.createElement('button');
+    buttons.textContent = 'New Game';
+    buttons.classList.add('newgamebutton');
+    buttonDiv.appendChild(buttons);
+    buttons.addEventListener("click", buttons => location.reload())
+  }
 
 function game(){
-    for(let i=0;i<5;i++){
-        let playerSelection = prompt("rock, paper or scissors?").toLowerCase();
-        let computerSelection = computerPlay();
-        console.log("Computer plays: " + computerSelection +" "+  "Player plays: "+ playerSelection);
-        console.log(playRound(playerSelection,computerSelection));
+    let computerPlays = computerPlay();
+    let roundResult = playRound(this.id,computerPlays);
+    if(roundResult[0] == 1){
+        playerScore+=1;
+        pScore.textContent = `Your Score : ${playerScore}`;
+    }else if(roundResult[0] == -1){
+        computerScore+=1;
+        cScore.textContent = `Your Score : ${computerScore}`;
     }
+
+    round++;
+
+    if(round<6) displayRound.textContent = `Round ${round}`;
+    else displayRound.textContent = 'Results'
+    compChoice.textContent = `The computer chose ${computerPlays}`;
+    roundActions.textContent = `Round ${round-1} result: ${roundResult[1]}`;
+
+    if(round==6){
+        console.log(playerScore + " " + computerScore);
+        if(playerScore > computerScore) endResults.textContent = 'Player Wins';
+        else if(playerScore == computerScore) endResults.textContent = 'Draw';
+        else endResults.textContent = 'Computer Wins';
+
+        swapButtons();
+    }
+
+
+
 }
 
-game();
+
