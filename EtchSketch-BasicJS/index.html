@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch a Sketch</title>
+        <meta charset=UTF-8>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <div id="main">
+
+            <div id="frame">
+                <p id="title">Etch-a-Sketch</p>
+                <div id="grid"></div>
+            </div>
+
+            <div id="buttons">
+                <button id="clear" class="button">Clear</button>
+                <button id="resize" class="button">Resize grid</button> 
+                <fieldset>
+                    <input type="radio" name="color" id="black" value="black" checked>
+                    <label for="black">Black</label>
+                    <input type="radio" name="color" id="random" value="random">
+                    <label for="random">Random</label>
+                    <input type="radio" name="color" id="darken" value="darken">
+                    <label for="darken">Darken</label>
+                </fieldset>
+            </div>
+
+        </div>
+
+
+        <script src="scripts/script.js"></script>
+    </body>
+
+</html>
