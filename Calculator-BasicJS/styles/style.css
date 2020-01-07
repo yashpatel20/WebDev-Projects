@@ -1,6 +1,8 @@
 /* Background */
 body {
-    background-color: #eae0d5;
+    background-color:#AAAAAA;
+    margin :0;
+    padding: 0;
 }
 .material-icons { 
     font-size: 22px;
@@ -21,12 +23,13 @@ body {
     margin: auto;
     border: 3px solid black;
     font-family: 'Niramit', sans-serif;
+    
 }
 
 .display-container{
     display: grid;
     height: 170px;
-    background-color:#292930;
+    background-color:#111111;
     font-size: 25px;
     color: white;
     border: 1px solid black;
@@ -94,6 +97,3 @@ button {
 }
 
 
-footer {
-    height: 57px;
-}
