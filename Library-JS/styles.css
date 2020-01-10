@@ -4,5 +4,97 @@
 body {
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    background-color: #85144b;
 }
+
+.container{
+    background-color:whitesmoke;
+    width: 650px;
+    min-height: 750px;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px 0px 10px 20px;
+    box-shadow: 5px 10px 10px black;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Title{
+    font-size: 35px;
+}
+
+.Add-book-button{
+    background-color: #2191FB;
+    color: white;
+    width: 80px;
+    height: 40px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.grid{
+    max-height: 700px;
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.book-item{
+    display: flex;
+    margin-top: 20px;
+}
+
+.book-desc{
+    margin-left: 10px;
+}
+.book-title{
+    font-size: 21px;
+    font-weight: bolder;
+}
+.book-author{
+    font-weight: lighter;
+    font-size: 19px;
+}
+.book-summary{
+    font-size: 17px;
+}
+.book-buttons{
+    display: flex;
+    flex-direction: column;
+
+}
+img{
+    border-radius: 10px;
+    width: 100px;
+    height: 150px;
+}
+
+.read{
+    font-size: 15px;
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+}
+.add{
+    font-size: 15px;
+    margin-top: 5px;
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+}
+.delete{
+    font-size: 15px;
+    margin-top: 5px;
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+
+
+
+
