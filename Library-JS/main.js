@@ -1,16 +1,30 @@
 let myLibrary = [];
 
-function book(){
+function book(title, author, desc, image ){
     //constructor
-
+    this.title = title;
+    this.author = author;
+    this.desc = desc;
+    this.image = image;
+    this.read = false;
 }
 
-function addBookToLibrary(){
+const addBook = document.querySelector(".AddButton");
+const modal = document.querySelector(".modal-container");
+const cancel = document.querySelector("#cancel");
+const submit - document.querySelector("#submit");
 
-}
+addBook.addEventListener('click',()=>{
+     modal.classList.toggle("active");
+});
 
-//render() to show all books on web 
+cancel.addEventListener("click", ()=>{
+    modal.classList.toggle("active");
+    document.querySelector("form").reset();
+});
 
-//New book button
+submit.addEventListener("click",()=>{
+    //get all data and create new book object
+    
+});
 
-//Firebase for database

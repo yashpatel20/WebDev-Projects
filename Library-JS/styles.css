@@ -27,7 +27,7 @@ body {
     font-size: 35px;
 }
 
-.Add-book-button{
+button{
     background-color: #2191FB;
     color: white;
     width: 80px;
@@ -78,6 +78,10 @@ img{
     width: 75px;
     height: 35px;
     border-radius: 5px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
 }
 .add{
     font-size: 15px;
@@ -85,6 +89,10 @@ img{
     width: 75px;
     height: 35px;
     border-radius: 5px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
 }
 .delete{
     font-size: 15px;
@@ -92,8 +100,72 @@ img{
     width: 75px;
     height: 35px;
     border-radius: 5px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
 }
 
+/* Modal */
+.modal-container{
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color : rgba(0, 0, 0, 0.5);
+
+}
+
+.active{
+    display: flex;
+}
+
+.modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 5px;
+
+
+}
+form{
+    padding: 10px;
+}
+label{
+    font-size: 17px;
+}
+input{
+    display: block;
+    width: 100%;
+    height: 27px;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 10px;    
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+.modal-buttons{
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    background-color: #0095ff;
+    border-color: #0095ff;
+    color: white;
+    
+}
+#cancel{
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
+}
 
 
 

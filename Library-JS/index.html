@@ -10,7 +10,7 @@
         <div class="container">
             <div class="header">
                 <div class="Title">My Library</div>
-                <button class="Add-book-button">Add Book</button>
+                <button class="AddButton">Add Book</button>
             </div>
             <hr>
             <div class="Library-container">
@@ -38,6 +38,24 @@
                 </div>
 
 
+            </div>
+            <div class="modal-container">
+                <div class="modal">
+                    <form action="javascript:void(0)" >
+                        <label for="title">Title</label>
+                        <input type="text" name="title" placeholder="Harry Potter">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" placeholder="JK Rowling">
+                        <label for="Desc">Description</label>
+                        <input type="text" name="Desc" placeholder="This book follows Harry Potter's second year at Hogwarts as he opens the Chamber">
+                        <label for="img">Image</label>
+                        <input type="text" name="image" placeholder="Harry Potter">
+                        <div class="modal-buttons">
+                            <button id="submit">Add Book</button>
+                            <button id="cancel">Cancel</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
 
