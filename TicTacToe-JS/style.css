@@ -1,0 +1,91 @@
+body{
+    text-align: center;
+}
+.container{
+    margin-top: 50px;
+    display: inline-block;
+}
+.title{
+    font-size: xx-large;
+}
+.text{
+    font-size: larger;
+    margin-top: 13px;
+    margin-bottom: 20px;
+
+}
+.gameBoard-container{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 480px;
+}
+.grid-btn{
+    height: 160px;
+    border: 0;
+ background: none;
+ box-shadow: none;
+ border-radius: 0px;
+}
+
+#btn1,#btn4,#btn7{
+    border: black solid;
+    border-left: none;
+    border-top: none;
+}
+#btn7{
+    border-bottom: none;
+}
+#btn3,#btn6,#btn9{
+    border: black solid;
+    border-right: none;
+    border-top: none;
+}
+#btn9{
+    border-bottom: none;
+}
+#btn2{
+    border: black solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#btn5{
+    border: black solid;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+.input-name{
+    margin-bottom: 10px;
+}
+
+.input-computer{
+    margin-bottom: 10px;
+}
+
+.btn-newGame{
+    background-color: #2191FB;
+    color: white;
+    width: 120px;
+    height: 40px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    border-radius: 5px;
+    
+}
+
+#playerOneName{
+    margin-right: 5px;
+}
+
+
+
+
+
