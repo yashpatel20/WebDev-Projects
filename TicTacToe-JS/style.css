@@ -64,8 +64,12 @@ body{
 .input-computer{
     margin-bottom: 10px;
 }
+.input-Buttons{
+    text-align: center;
+}
 
 .btn-newGame{
+    display: inline-block;
     background-color: #2191FB;
     color: white;
     width: 120px;
@@ -84,6 +88,18 @@ input[type=text] {
 #playerOneName{
     margin-right: 5px;
 }
+
+.btn-endGame{
+    display: inline-block;
+    background-color : red;
+    color: white;
+    width: 120px;
+    height: 40px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    display : none;
+};
 
 
 
