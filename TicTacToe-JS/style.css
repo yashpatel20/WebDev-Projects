@@ -1,7 +1,7 @@
 body{
     text-align: center;
 }
-.container{
+.container-gameBoard{
     margin-top: 50px;
     display: inline-block;
 }
@@ -28,29 +28,29 @@ body{
  border-radius: 0px;
 }
 
-#btn1,#btn4,#btn7{
+#btn11,#btn21,#btn31{
     border: black solid;
     border-left: none;
     border-top: none;
 }
-#btn7{
+#btn31{
     border-bottom: none;
 }
-#btn3,#btn6,#btn9{
+#btn13,#btn23,#btn33{
     border: black solid;
     border-right: none;
     border-top: none;
 }
-#btn9{
+#btn33{
     border-bottom: none;
 }
-#btn2{
+#btn12{
     border: black solid;
     border-left: none;
     border-right: none;
     border-top: none;
 }
-#btn5{
+#btn22{
     border: black solid;
     border-right: none;
     border-left: none;
@@ -100,6 +100,12 @@ input[type=text] {
     border-radius: 5px;
     display : none;
 };
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
 
 
 
