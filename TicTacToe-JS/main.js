@@ -28,11 +28,11 @@ const game = (()=>{
     //creates player objects and resets the grid
     let startGame = () => {
         //check computer radio button
-        playerOne = player(document.querySelector("#playerOneName"));
+        playerOne = player(document.querySelector("#playerOneName").value);
         if(document.querySelector("#checkComputer").checked == true){
             playerTwo = player("Computer");
         }else{
-            playerTwo = player(document.querySelector("#playerTwoName"));
+            playerTwo = player(document.querySelector("#playerTwoName").value);
         }
 
         //check if names are empty
@@ -49,7 +49,8 @@ const game = (()=>{
     let resetGrid = () => {
         for(let i=0;i<3;i++){
             for(let j=0;j<3;j++){
-                let button = document.querySelector("#btn"+`${i}`+`${j}`).innerHTML = "";
+                let button = document.querySelector("#btn"+i+j);
+                button.innerHTML = "";
                 button.addEventListener("click",markBox);
                 gameBoard[i][j] = "";
             }
@@ -70,7 +71,7 @@ const game = (()=>{
         if(!isNaN(row)){
             gameBoard[row][col] = currentMark;
             //set inner html and remove event listener
-            let box = document.querySelector(".btn"+`${i}`+`${j}`);
+            let box = document.querySelector(".btn"+i+j);
             box.innerHTML = currentMark;
             box.removeEventListener("click",markBox);
 
@@ -131,9 +132,9 @@ const game = (()=>{
     } else if (gameBoard[0][2] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][0] && gameBoard[0][2] != "") {
         declareWinner(gameBoard[0][2]); 
     } else{
-            let k=0;
-            for(let i=0;i<3;i++){
-                for(let j=0;j<3;j++){
+            let k=1;
+            for(let i=1;i<3;i++){
+                for(let j=1;j<3;j++){
                     if(gameBoard[i][j]!="") k++;
                 }
             }
@@ -142,8 +143,26 @@ const game = (()=>{
         }
     };
 
-    let declareWinner = () => {
+    //X is player one and O is player two
+    let declareWinner = (winner) => {
+        if(winner == "X"){
+            document.querySelector(".title").innerHTML = "The winner is "+playerOne.name+"!";
+        }else if(winner = "O"){
+            document.querySelector(".title").innerHTML = "The winner is "+playerTwo.name+"!";
+        }else if(winner == "end"){
+            document.querySelector(".title").innerHTML = "Game ended";
+        }else{
+            document.querySelector(".title").innerHTML = "Its a Tie!";
+        }
 
+        //remove all listeners in the case of end game
+        for(let i=0;i<3;i++){
+            for(let j=0;j<3;j++){
+                document.querySelector(".btn"+i+j).removeEventListener("click",markBox);
+            }
+        }
+
+        document.querySelector(".btn-endGame").style.display = none;
     };
 
     

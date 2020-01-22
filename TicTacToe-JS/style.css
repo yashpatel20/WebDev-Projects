@@ -28,29 +28,29 @@ body{
  border-radius: 0px;
 }
 
-#btn11,#btn21,#btn31{
+#btn00,#btn10,#btn20{
     border: black solid;
     border-left: none;
     border-top: none;
 }
-#btn31{
+#btn20{
     border-bottom: none;
 }
-#btn13,#btn23,#btn33{
+#btn02,#btn12,#btn22{
     border: black solid;
-    border-right: none;
-    border-top: none;
-}
-#btn33{
-    border-bottom: none;
-}
-#btn12{
-    border: black solid;
-    border-left: none;
     border-right: none;
     border-top: none;
 }
 #btn22{
+    border-bottom: none;
+}
+#btn01{
+    border: black solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#btn11{
     border: black solid;
     border-right: none;
     border-left: none;
@@ -102,9 +102,10 @@ input[type=text] {
 };
 
 .container{
-    display: flex;
-    flex-direction: column;
-    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.container-scoreBoard{
 }
 
 
