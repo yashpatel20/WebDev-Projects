@@ -1,7 +1,19 @@
-body{
-    text-align: center;
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr)) ;
+    grid-gap: 1rem;
 }
 .container-gameBoard{
+    grid-column: span 2;
+    margin-top: 50px;
+    margin-left: 100px;
+    display: inline-block;
+}
+.container-scoreBoard{
     margin-top: 50px;
     display: inline-block;
 }
@@ -69,7 +81,6 @@ body{
 }
 
 .btn-newGame{
-    display: inline-block;
     background-color: #2191FB;
     color: white;
     width: 120px;

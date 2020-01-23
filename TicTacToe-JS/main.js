@@ -71,13 +71,14 @@ const game = (()=>{
         if(!isNaN(row)){
             gameBoard[row][col] = currentMark;
             //set inner html and remove event listener
-            let box = document.querySelector(".btn"+i+j);
+            let box = document.querySelector(".btn"+i+j); 
             box.innerHTML = currentMark;
             box.removeEventListener("click",markBox);
 
         }else{ //if player then use event.target to get row and col
             //row is the event as no args are passed
-            let rowT = row.target.id.slice(-2);
+            let rowT = row.target.id.slice(-2,-1);
+            console.log(rowT);
             let colT = row.target.id.slice(-1);
             gameBoard[rowT][colT] = currentMark;
             row.target.innerHTML = currentMark;
@@ -88,22 +89,22 @@ const game = (()=>{
     };
     //swaps mark and displays whose turn it is to go
     let swapMark = () => {
-        if(currentMark = "X"){
+        if(currentMark == "X"){
             currentMark = "O";
             document.querySelector(".text").innerHTML = playerTwo.name + "'s turn!";
-        }else{
-            currentMark = "O";
+        }else if(currentMark == "O"){
+            currentMark = "X";
             document.querySelector(".text").innerHTML = playerOne.name + "'s turn!";
         }
 
         //check if the last round was played by computer
-        if(check == false){
-            return;
-        }
+        // if(check == false){
+        //     return;
+        // }
         //check if the player won  the round 
         checkWin();
         //play computer if not
-        computerPlay();
+        //computerPlay();
 
     };
 
@@ -145,6 +146,7 @@ const game = (()=>{
 
     //X is player one and O is player two
     let declareWinner = (winner) => {
+        console.log(gameBoard);
         if(winner == "X"){
             document.querySelector(".title").innerHTML = "The winner is "+playerOne.name+"!";
         }else if(winner = "O"){
@@ -158,11 +160,11 @@ const game = (()=>{
         //remove all listeners in the case of end game
         for(let i=0;i<3;i++){
             for(let j=0;j<3;j++){
-                document.querySelector(".btn"+i+j).removeEventListener("click",markBox);
+                document.querySelector("#btn"+i+j).removeEventListener("click",markBox);
             }
         }
 
-        document.querySelector(".btn-endGame").style.display = none;
+        document.querySelector(".btn-endGame").style.display = "none";
     };
 
     
