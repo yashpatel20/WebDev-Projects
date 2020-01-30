@@ -118,5 +118,42 @@
     height: 3px;
     background-color: rgb(243, 73, 73);
   }
+
+  .menu {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .menu__dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-bottom: 75px;
+  }
   
+  
+  .footer {
+    padding: 25px 0;
+    font-weight: 300;
+    color: #fff;
+    background-color: rgb(50, 50, 50);
+  }
+
+  .footer-content {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.1s color;
+  }
 
