@@ -1,8 +1,28 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+}
+
 /* Style the tab */
 .tab {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  min-height: 100px;
+  z-index: 3;
+  background-color: white;
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
 }
   
   /* Style the buttons that are used to open the tab content */
@@ -18,11 +38,13 @@
   /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #ddd;
+    border-bottom: 3px solid rgb(243, 73, 73);
 }
   
   /* Create an active/current tablink class */
 .tab button.active {
     background-color: #ccc;
+    
 }
   
   /* Style the tab content */
@@ -60,8 +82,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
+}
+
   .header:after {
     position: absolute;
     content: "";
@@ -74,6 +96,7 @@
     z-index: 1;
   }
   
+
   .header-heading {
     color: white;
     font-family: "Gochi Hand", cursive;
@@ -88,18 +111,7 @@
     letter-spacing: 2px;
     z-index: 2;
   }
-  
-  .header-subtext:before {
-    position: absolute;
-    top: 50%;
-    left: -25%;
-    content: "";
-    display: block;
-    background-color: #fff;
-    height: 1px;
-    width: 35px;
-  }
-  
+ 
   .header-subtext:after {
     position: absolute;
     top: 50%;
@@ -134,6 +146,56 @@
     justify-content: space-between;
     margin-top: 25px;
     padding-bottom: 75px;
+  }
+  
+  .menu__dish {
+    margin-top: 50px;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .menu__name {
+    width: 50%;
+  }
+  
+  .menu__price {
+    display: inline-block;
+    position: relative;
+    margin-left: auto;
+  }
+  
+  .menu__price:before {
+    position: absolute;
+    top: 50%;
+    left: -175px;
+    display: block;
+    content: "";
+    width: 150px;
+    height: 2px;
+    background-color: rgba(220, 220, 220, 0.8);
+    border-radius: 100%;
+  }
+  
+  .menu__description {
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgb(125, 125, 125);
+  }
+ 
+  
+
+  .contact {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 75px 0;
+  }
+  
+  .contact__paragraph {
+    font-size: 42px;
+    margin-bottom: 20px;
   }
   
   
